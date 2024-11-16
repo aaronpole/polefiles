@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trivia Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Trivia Game!</h1>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <h3>What's Naveen's favorite car?</h3>
+            <button class="correct">Jengar Rover</button>
+            <button class="incorrect">Hyundai Vypin Vimaanam</button>
+            <button class="incorrect">Ford Puthuparambil Rocket</button>
+            <button class="incorrect">Nissan Kochi Kadal</button>
+            <p id="feedback1"></p>
+        </section>
+
+        <section class="section">
+            <h2>Part 2: Free Response</h2>
+            <h3>What is the national anthem of Vypin?</h3>
+            <input type="text" id="response" placeholder="Type your answer here">
+            <button id="check">Check Answer</button>
+            <p id="feedback2"></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Trivia Game</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Correct answer event
+            let correct = document.querySelector('.correct');
+            correct.addEventListener('click', function() {
+                correct.style.backgroundColor = 'green';
+                document.querySelector('#feedback1').innerHTML = 'Correct!';
+            });
+
+            // Incorrect answers event
+            let incorrects = document.querySelectorAll('.incorrect');
+            incorrects.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    button.style.backgroundColor = 'red';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect';
+                });
+            });
+
+            // Free response answer check
+            document.querySelector('#check').addEventListener('click', function() {
+                let input = document.querySelector('#response');
+                if(input.value.toLowerCase() === 'fish rock') {
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('#feedback2').innerHTML = 'Right Answer!';
+                } else {
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#feedback2').innerHTML = 'Wrong';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+         
