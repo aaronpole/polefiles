@@ -40,23 +40,51 @@ h1 {
 button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
-    border-radius: 0.25rem;
-    font-size: 0.95rem;
-    font-weight: 400;
+    border-radius: 50px; /* Rounded buttons */
+    font-size: 1rem;
+    font-weight: 600;
     line-height: 1.5;
-    padding: 0.375rem 0.75rem;
+    padding: 0.75rem 1.5rem; /* Bigger buttons */
     text-align: center;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.3s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.3s ease-in-out;
     vertical-align: middle;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem; /* Adds space between buttons */
+    width: auto; /* Allows buttons to size based on content */
 }
 
+button:hover, input[type="submit"]:hover {
+    background-color: #c1dbf7;
+    color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
 
 input[type="text"] {
     line-height: 1.8;
     width: 25%;
+    border-radius: 8px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
 }
 
 input[type="text"]:hover {
     background-color: #f5f5f5;
-    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    button, input[type="submit"] {
+        width: 100%; /* Full width buttons on smaller screens */
+        padding: 1rem; /* Larger padding for better touch targets */
+    }
+
+    .section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    input[type="text"] {
+        width: 100%; /* Full width input field on small screens */
+    }
 }
